@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+function converterMoeda(valorEmReal, tipoMoeda) {
+  if (typeof valorEmReal !== "number" || isNaN(valorEmReal)) {
+    return "Valor inválido! Por favor, digite um valor numérico.";
+  }
+  let taxaDeCambio;
+  if (tipoMoeda === "d") {
+    taxaDeCambio = 5.50;
+  } else if (tipoMoeda === "e") {
+    taxaDeCambio = 7.00;
+  } else {
+    return "Tipo de moeda inválido. Use 'd' para dólar ou 'e' para euro.";
+  }
+  const valorConvertido = valorEmReal / taxaDeCambio;
+  return valorConvertido.toFixed(2);
+}
+const valorEmReal = parseFloat(prompt("Digite o valor em real:"));
+const tipoMoeda = prompt("Digite 'd' para dólar ou 'e' para euro:");
+
+const valorConvertido = converterMoeda(valorEmReal, tipoMoeda);
+alert(valorConvertido);
+    </script>
+</body>
+</html>

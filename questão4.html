@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ function atendimentoBanco() {
+  const clientesPreferenciais = [];
+  const clientesFilaNormal = [];
+
+  while (true) {
+    const nome = prompt("Digite o nome do cliente (ou 'Fim' para sair):");
+    if (nome === "Fim") {
+      break;
+    }
+
+    const idade = parseInt(prompt("Digite a idade do cliente:"));
+
+    if (idade >= 60) {
+      clientesPreferenciais.push(nome);
+    } else {
+      clientesFilaNormal.push(nome);
+    }
+  }
+
+  alert("Ordem de atendimento - Preferencial:");
+  clientesPreferenciais.forEach((cliente, index) => alert(`${index + 1}. ${cliente}`));
+
+  alert("Ordem de atendimento - Fila normal:");
+  clientesFilaNormal.forEach((cliente, index) => alert(`${index + 1}. ${cliente}`));
+}
+
+atendimentoBanco();
+    </script>
+</body>
+</html>

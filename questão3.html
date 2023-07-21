@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+const diasSemana = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
+const temperaturas = [];
+for (let i = 0; i < 7; i++) {
+  const temperatura = parseFloat(prompt(`Digite a temperatura média para ${diasSemana[i]}:`));
+  temperaturas.push(temperatura);
+}
+const menorTemperatura = Math.min(...temperaturas);
+const maiorTemperatura = Math.max(...temperaturas);
+alert(`Menor temperatura da semana: ${menorTemperatura}\nMaior temperatura da semana: ${maiorTemperatura}`);
+    </script>
+</body>
+</html>
